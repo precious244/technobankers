@@ -9,7 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClipboardModule } from 'ngx-clipboard';
-
+import { NgbModule, NgbCarouselModule, NgbSlide } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,9 @@ import { ClipboardModule } from 'ngx-clipboard';
     HttpClientModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    ClipboardModule
+    ClipboardModule,
+    NgbModule,
+    NgbCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
