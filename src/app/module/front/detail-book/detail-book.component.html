@@ -1,281 +1,626 @@
-<nav class="background-color">
-  <div class="flex flex-wrap items-center justify-between mx-auto p-4 font-weight">
-    <a href="" class="flex items-center">
-        <img src="..//../../../assets/icon-technobanker.png" class="h-8 mr-3" alt="Flowbite Logo">
-        <span class="self-center whitespace-nowrap text-white">Technobankers</span>
-    </a>
-  <div class="flex md:order-2">
-      <button type="button" class="text-white border border-white rounded-lg text-sm px-5 py-1.5 text-center items-center">Register</button>
-  </div>
-  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-      <li>
-        <a href="" class="block py-2 pl-3 pr-4 text-white font-weight" aria-current="page">Home</a>
-      </li>
-      <li>
-        <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="flex justify-between w-full py-2 pl-3 pr-4 rounded block py-2 pl-3 pr-4 text-white font-weight">
-          Training 
-          <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
-            </path>
-          </svg>
-        </button>
-        <!-- Dropdown menu -->
-        <div id="dropdownHover" class="z-30 hidden font-normal w-44 background-color-dropdown">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
-            <li>
-              <a href="#" class="block px-4 py-2 hover text-white">Public Training</a>
+<div class="bg-gradient-to-r from-[#060623] to-[#474790]">
+  <div class="container h-[100%]">
+    <div class="flex flex-wrap justify-center py-10">
+
+      <div class="basis-full mb-6">
+        <nav class="flex" aria-label="Breadcrumb">
+          <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+            <li class="inline-flex items-center">
+              <!-- <a [routerLinkActive]="'active'" routerLink="home" href="#" class="inline-flex items-center text-sm font-medium text-white hover:text-yellow-300">
+                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Home
+              </a> -->
+              <a href="" class="inline-flex items-center text-sm font-medium text-white hover:text-yellow-300">
+                <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+                </svg>
+                Home
+              </a>
             </li>
             <li>
-              <a href="#" class="block px-4 py-2 hover text-white">Company Training</a>
+              <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <!-- <a [routerLinkActive]="'active'" routerLink="our-library" href="#" class="ms-1 text-sm font-medium text-white hover:text-yellow-300 md:ms-2">Our Library</a> -->
+                <a href="/our-library" class="ms-1 text-sm font-medium text-white hover:text-yellow-300 md:ms-2">Our Library</a>
+              </div>
             </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <button id="dropdownHoverButton1" data-dropdown-toggle="dropdownHover1" data-dropdown-trigger="hover" class="flex justify-between w-full py-2 pl-3 pr-4 rounded block py-2 pl-3 pr-4 text-white font-weight">
-          Events 
-          <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd">
-            </path>
-          </svg>
-        </button>
-        <!-- Dropdown menu -->
-        <div id="dropdownHover1" class="z-30 hidden font-normal divide-y divide-gray-100 w-44 background-color-dropdown dark:divide-gray-600">
-          <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton1">
-            <li>
-              <a href="#" class="block px-4 py-2 hover text-white">Workshop</a>
+            <li aria-current="page">
+              <div class="flex items-center">
+                <svg class="rtl:rotate-180 w-3 h-3 text-white mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                </svg>
+                <span class="ms-1 text-sm font-medium text-yellow-300 md:ms-2">{{book.bookTitle}}</span>
+              </div>
             </li>
-            <li>
-              <a href="#" class="block px-4 py-2 hover text-white">Other Events</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-white font-weight">Blog</a>
-      </li>
-      <li>
-        <a [routerLinkActive]="'active'" routerLink="our-library" href="#" class="block py-2 pl-3 pr-4 text-white font-weight">Our Library</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 pl-3 pr-4 text-white font-weight">About</a>
-      </li>
-      <li>
-        <a href="#" class="block py-2 pl-4 pr-4 text-white font-weight login">Login</a>
-      </li>
-    </ul>
-  </div>
-  </div>
-</nav>
-
-
-
-<div class="banner1 height100p" id="home" loading="lazy">
-    <div class="pt-5 pl-20">
-        <button type="button" class="text-white"> Home / </button>
-        <button type="button" class="text-white"> Our Library / </button> 
-        <button type="button" class="text-white"> Detail Book</button>
-    </div>
-    <div class="grid grid-cols-2 gap-4" id="home" loading="lazy">
-        <img class="ml-20 pl-10 mt-10 image-home1" src="{{book.bookImage}}">       
-        <div class="position-section1">
-            <p class="text-color-yellow text-status">NEW RELEASE</p>
-            <p class="text-white text-author">By
-              <span *ngFor="let item of detailModel.authorOfBook" class="text-white text-author"> {{ item.bookAuthor }},</span>
-            </p> 
-            <h1 class="mt-20 text-color-yellow home-text-section-2 position-title-book">
-              {{book.bookTitle}}
-            </h1>
-            <div class="flex position-info-book" >
-              <p class="text-volume text-center pt-1 bg-slate-600 text-white">Vol.{{book.bookVolume}}</p>
-              <p  class="ml-3 bg-slate-600 text-series text-center pt-1 text-white" *ngIf="book.seriesName">{{book.seriesName}}</p>
-            </div>
-            <!-- <div class="flex position-info-book" *ngIf="book.bookType === 'Non Series'">
-              <p class="text-volume text-center pt-1 bg-slate-600 text-white">Vol.{{book.bookVolume}}</p>
-            </div> -->
-            <p class="sub-text-section-2 text-white position-text-desc">
-              {{book.bookDescription}}
-            </p>
-            <p class="text-white position-text-key">
-              Keywords : 
-              <span class="text-white" *ngFor="let item of detailModel.keywordOfBook"> {{item.keyword}}, </span>
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="flex background-color-section-2">
-  <h1 class="text-title-section2 text-white">Overview</h1>
-  <p class="text-p-section2 text-white text-center">Genre : {{book.bookGenre}}</p>
-  <p class="text-p2-section2 text-white text-center" *ngFor="let item of detailModel.roles">Relevant for roles : {{item.roles}}</p>
-</div>
-
-<div class="grid grid-cols-2 mb-20">
-    <div class="col-start-1 col-end-2">
-      <h2 class="text-color-gray text-title-section3">About This Edition</h2>
-      <div class="text-color-gray mt-10 ml-20 grid grid-cols-2">
-        <p class="mt-2">ISBN : {{book.bookIsbn}}</p>
-        <p class="mt-2">Language : {{book.bookLanguage}}</p>
-        <p class="mt-2">Released : {{book.bookReleased}}</p>
-        <p class="mt-2">Pages : {{book.bookPages}}</p>
-        <p class="mt-2">Publisher : {{book.bookPublisher}}</p>
-        <p class="mt-2">Author
-          <span *ngFor="let item of detailModel.authorOfBook"> {{ item.bookAuthor }},</span>
-        </p> 
+          </ol>
+        </nav>
+      </div> 
+      
+      <div class="md:basis-1/3 basis-full flex md:justify-end justify-center p-3">
+        <img class="md:h-[60%] sm:h-100 rounded-xl" src="{{book.bookImage}}">
       </div>
-      <div class="mt-5 ml-20 text-color-gray paragraph">
-        <h1 class="mt-2">Brief Description</h1>
-        <p class="mt-5">{{book.bookBriefDesc}}</p>
-        <!-- <p class="mt-5">The Rust Programming Language is the official book on Rust: an open source systems programming language that helps you write faster, more reliable software. Rust offers control over low-level details (such as memory usage) in combination with high-level ergonomics, eliminating the hassle traditionally associated with low-level languages.</p>
-        <p class="mt-5">The authors of The Rust Programming Language, members of the Rust Core Team, share their knowledge and experience to show you how to take full advantage of Rust's features--from installation to creating robust and scalable programs. You'll begin with basics like creating functions, choosing data types, and binding variables and then move on to more advanced concepts, such as:</p> -->
-        <button data-modal-target="defaultModal" data-modal-toggle="defaultModal" type="button" class="mt-10 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+      
+      <div class="md:basis-2/3 basis-full flex flex-col justify-start p-3">
+        <h5 class="text-[24px] text-[#FFD249] font-bold mb-3">NEW RELEASE</h5>
+        <p class="text-[18px] text-[#FFF]">By 
+          <span *ngFor="let item of detailModel.authorOfBook"> {{ item.bookAuthor}}</span>
+        </p>
+        <h5 class="text-[42px] text-[#FFD249] font-bold mt-10">{{book.bookTitle}}</h5>
+        <div class="flex my-3">
+          <span class="bg-gray-600 text-white text-xs font-medium me-2 px-2.5 py-2 rounded">Vol. {{book.bookVolume}}</span>
+          <span class="bg-gray-600 text-white text-xs font-medium me-2 px-2.5 py-2 rounded" *ngIf="book.seriesName">{{book.seriesName}}</span>
+        </div>
+        <p class="text-white text-[18px]">{{book.bookDescription}}</p>
+        <p class="text-white text-[14px] mt-6">Keywords : <i *ngFor="let item of detailModel.keywordOfBook">{{item.keyword}}, </i></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-[#22223C]">
+  <div class="container">
+    <div class="flex flex-wrap justify-center items-center py-4 text-white">
+      <div class="md:basis-1/3 basis-full flex justify-center py-2">
+        <h5 class="text-[28px] font-bold">Overview</h5>
+      </div>
+      <div class="md:basis-1/3 basis-full flex flex-col justify-center text-center py-2">
+        <h5 class="text-[16px] md:mb-3 sm:mb-0">Genre :</h5>
+        <h5 class="text-[16px">{{book.bookGenre}}</h5>
+      </div>
+      <div class="md:basis-1/3 basis-full flex flex-col justify-center text-center py-2">
+        <h5 class="text-[16px] md:mb-3 sm:mb-0">Relevant for roles :</h5>
+        <h5 class="text-[16px]">
+          <span *ngFor="let item of detailModel.roles">{{item.roles}}, </span>
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="flex flex-wrap justify-center items-center py-6">
+    <div class="md:basis-2/3 basis-full flex flex-col justify-start px-6 py-3">
+      <h5 class="text-[20px] text-[#4F4F4F] font-semibold">About This Edition</h5>
+      <div class="flex flex-wrap justify-start mt-3">
+        <p class="md:basis-1/2 basis-full mt-2">ISBN : {{book.bookIsbn}}</p>
+        <p class="md:basis-1/2 basis-full mt-2">Language : {{book.bookLanguage}}</p>
+        <p class="md:basis-1/2 basis-full mt-2">Released : {{book.bookReleased}}</p>
+        <p class="md:basis-1/2 basis-full mt-2">Pages : {{book.bookPages}}</p>
+        <p class="md:basis-1/2 basis-full mt-2">Publisher : {{book.bookPublisher}}</p>
+        <p class="md:basis-1/2 basis-full mt-2">Author : 
+          <span *ngFor="let item of detailModel.authorOfBook"> {{ item.bookAuthor }}, </span>
+        </p>
+      </div>
+      <h5 class="text-[20px] font-semibold mt-12 mb-2 text-[#4F4F4F]">Brief Description</h5>
+      <p class="">{{book.bookBriefDesc}}</p>
+      <div class="flex flex-row gap-2">
+        <button data-modal-target="default-modal" data-modal-toggle="default-modal" type="button"
+          class="mt-10 text-[#5656C6] hover:text-white border-2 border-[#5656C6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
           Preview
         </button>
-        <button data-modal-target="citationModal" data-modal-toggle="citationModal" type="button" class="mt-10 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+        <button data-modal-target="citationModal" data-modal-toggle="citationModal" type="button"
+          class="mt-10 text-[#5656C6] hover:text-white border-2 border-[#5656C6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mb-2">
           Create Citation
         </button>
-        <h1 class="mt-5 text-version">Available in Full Version</h1>
-        <button type="button" class="mt-5 items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 button">
-          Buy Book Now
-        </button>
+      </div>
+      <h1 class="text-[20px] text-[#4F4F4F] sm:text-center md:text-start font-semibold mt-4">Available in Full Version</h1>
+      <div class="flex flex-wrap">
+
+        <div class="basis-full md:basis-1/3 flex justify-center md:mt-0 mt-4 w-full">
+          <div class="py-3 px-3 flex flex-row flex-wrap items-center justify-center text-center md:w-fit h-fit w-full">
+            <img class="w-[50px] h-[50px]" src="../../../../assets/icon-tokopedia.png" alt="">
+            <div class="flex flex-col ml-2">
+              <p class="text-[#2C2E31] font-semibold">For Indonesian Readers</p>
+              <a href="{{book.bookLink}}" target="_blank">
+                <button class="border-2 border-indigo-600 bg-indigo-600 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded-xl w-full">Buy on Tokopedia</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="basis-full md:basis-1/3 flex justify-center md:mt-0 mt-4 w-full">
+          <div class="py-3 px-3 flex flex-row flex-wrap items-center justify-center text-center md:w-fit h-fit w-full">
+            <img class="w-[50px] h-[50px]" src="../../../../assets/icon-google-book.png" alt="">
+            <div class="flex flex-col ml-2">
+              <p class="text-[#2C2E31] font-semibold">For International Readers</p>
+              <a href="https://books.google.com/books/about/TECHNOBANKER_Capabilities_and_skills_for.html?id=7f0IEQAAQBAJ" target="_blank">
+                <button class="border-2 border-indigo-600 bg-indigo-600 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded-xl w-full">Buy on Google Book</button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="basis-full md:basis-1/3 flex justify-center md:mt-0 mt-4 w-full">
+          <div class="border-white bg-white hover:bg-white py-3 px-3 flex flex-row flex-wrap items-center justify-center text-center md:w-fit h-fit w-full">
+            <img class="w-[50px] h-[50px]" src="../../../../assets/icon-technobanker-v2.png" alt="">
+            <div class="flex flex-col ml-2"> 
+              <p class="text-[#2C2E31] font-semibold">For International Readers</p>             
+              <button (click)="buyEbook()" class="border-2 border-indigo-600 bg-indigo-600 hover:bg-blue-700 text-white font-bold py-2 px-4 my-2 rounded-xl w-full">Buy on this website</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="mt-10 ml-20 box">
-      <h2 class="text-start-reading mt-10">Start Reading Now</h2>
-      <h1 class="mt-5 text-get-started text-color-gray">Get 1 FREE Chapter</h1>
-      <img class="ml-20 pl-20 mt-5" src="../../../../assets/image-logo.png">
-      <form [formGroup]="detailModel.formGroupEmail">
-        <div class="form-group">
-          <input formControlName="clientName" class="input-text mt-5 ml-7" type="text" placeholder="Your name">
-          <div *ngIf="f['clientName'] && (f['clientName'].touched || f['clientName'].dirty)  && !f['clientName'].valid">
+
+    <div class="md:basis-1/3 basis-full flex flex-col justify-center text-center px-6 py-3">
+      <div class="w-full p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8">
+        <form class="space-y-6" [formGroup]="detailModel.formGroupEmail">
+            <h5 class="text-[24px] font-bold text-[#5656C6]">Start Reading Now</h5>
+            <h5 class="text-[36px] font-bold text-[#4F4F4F]">Get 1 FREE Chapter</h5>
+            <div class="flex justify-center">
+              <img src="..//../../../assets/detail-1.png" class="" alt="">
+            </div>
+
+            <input formControlName="clientName" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Your name" required>
+            <div *ngIf="f['clientName'] && (f['clientName'].touched || f['clientName'].dirty)  && !f['clientName'].valid">
               <div *ngIf="f['clientName'].errors">
-                  <div class="pl-10 text-sm" *ngIf="!detailModel.formGroupEmail.controls['clientName'].valid">
-                      <span style="color: #EB5757;">A field is required</span>
-                  </div>
+                <div class="pl-10 text-sm" *ngIf="!detailModel.formGroupEmail.controls['clientName'].valid">
+                  <span style="color: #EB5757;">A field is required</span>
+                </div>
               </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <input formControlName="clientEmail" class="input-text mt-5 ml-7" type="text" placeholder="example@gmail.com" required>
-          <div *ngIf="f['clientEmail'] && (f['clientEmail'].touched || f['clientEmail'].dirty)  && 
-          !f['clientEmail'].valid">
+            </div>
+            
+            <input formControlName="clientEmail" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="example@gmail.com" required>
+            <div *ngIf="f['clientEmail'] && (f['clientEmail'].touched || f['clientEmail'].dirty)  && 
+              !f['clientEmail'].valid">
               <div *ngIf="f['clientEmail'].errors">
-                  <div class="pl-10 text-sm"
-                      *ngIf="!detailModel.formGroupEmail.controls['clientEmail'].valid">
-                      <span style="color: #EB5757;">A valid email is required</span>
-                  </div>
+                <div class="text-sm" *ngIf="!detailModel.formGroupEmail.controls['clientEmail'].valid">
+                  <span style="color: #EB5757;">A valid email is required</span>
+                </div>
               </div>
-          </div>
-        </div>
-        <div class="flex mt-5">
-          <div class="position-flag pl-8 pt-4">
-            <img class="" src="../../../../assets/flag.png">
-         </div>
-          <p class="pt-3 pl-3">+62 </p>
-          <input formControlName="clientNumber" class="input-text2 ml-2" type="text" placeholder="Phone (optional)">
-        </div>
-        <button (click)="toggleLoading()" (click)="submitEmail()" type="button" class="mt-5 items-center text-base font-medium text-white rounded-lg focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 button2">
-          <div class="flex pl-20 pl-20 ml-20">
-            <img *ngIf="isLoading" style="width : 25px" src="../../../../assets/loading.gif" />
-            <span class="">Send me free chapter</span>
-          </div>
-        </button>
-      </form>
+            </div>
+            <div class="flex flex-row items-center">
+              <!-- <img class="h-fit" src="../../../../assets/flag.png">
+              <p class="mx-1.5">+62</p> -->
+              <input formControlName="clientNumber" type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="example : 62812345678 (optional)" required>
+            </div>
+            <button (click)="toggleLoading()" (click)="submitEmail()" type="button" class="w-full text-white text-[18px] bg-[#5656C6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center">Send me free chapter</button>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
 
-<!-- Modal-Preview-Image -->
-<div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-  <div class="relative modal-preview">
+<div class="container">
+  <div class="flex flex-wrap justify-center items-center">
+    <div class="basis-full flex flex-col justify-start">
+      <div class="flex flex-wrap justify-start px-4">
+        <h5 class="text-[24px] font-semibold text-[#4F4F4F] me-2">Reviews</h5>
+        <div class="mb-5">
+          <p class="text-[16px] font-semibold text-[#303096] bg-[#F4F4FF] px-3 py-1 rounded-lg">{{ratingLength}}</p>
+        </div>
+        <div class="md:ps-10 ps-3">
+          <a href="leave-review/{{book.bookId}}">
+            <button type="button" class="bg-gradient-to-r from-[#FFB649] to-[#FCCB4E] focus:outline-none text-white hover:bg-gradient-to-br 
+            focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-md px-3 py-2 me-2 mb-2 dark:focus:ring-yellow-900">
+              Leave Review
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-full bg-white">
+    <ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+        <li class="me-2">
+            <button id="all-tab" data-tabs-target="#all" type="button" role="tab" aria-controls="about" aria-selected="true" class="inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500">
+              All
+            </button>
+        </li>
+        <li class="me-2">
+            <button id="best-tab" data-tabs-target="#best" type="button" role="tab" aria-controls="services" aria-selected="false" class="inline-block p-4 hover:text-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-gray-300">
+              Best
+            </button>
+        </li>
+    </ul>
+    <div id="defaultTabContent">
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="all" role="tabpanel" aria-labelledby="all-tab">
+          <div *ngFor="let item of book.bookReviewList">
+            <h5 class="text-[18px] text-[#4F4F4F] font-semibold my-2">{{item.bookReviewName}}</h5>
+            <p class="text-[14px] text-[#4F4F4F]">{{item.bookReviewCreated}}</p>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 1">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">1/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 2">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">2/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 3">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">3/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 4">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">4/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 5">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">5/5</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-[#4F4F4F] mb-4">{{item.bookReviewText}}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2" viewBox="0 0 1282 2" fill="none" class="w-full">
+              <path d="M1 1H1281" stroke="#DEDEDE" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+        <div class="hidden p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800" id="best" role="tabpanel" aria-labelledby="best-tab">
+          <div *ngFor="let item of book.bookReviewBestList">
+            <h5 class="text-[18px] text-[#4F4F4F] font-semibold my-2">{{item.bookReviewName}}</h5>
+            <p class="text-[14px] text-[#4F4F4F]">{{item.bookReviewCreated}}</p>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 1">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">1/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 2">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">2/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 3">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">3/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 4">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-gray-300 me-1 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">4/5</p>
+              </div>
+            </div>
+            <div class="flex flex-wrap my-2" *ngIf="item.bookReviewRating == 5">
+              <p class="text-[14px] text-[#4F4F4F]">Book Rate</p>
+              <div class="flex items-center mx-2">
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                    <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <svg class="w-4 h-4 text-yellow-300 me-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                  <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"/>
+                </svg>
+                <p class="ms-1 text-sm font-medium text-gray-500 dark:text-gray-400">5/5</p>
+              </div>
+            </div>
+            <p class="text-[16px] text-[#4F4F4F] mb-4">{{item.bookReviewText}}</p>
+            <svg xmlns="http://www.w3.org/2000/svg" height="2" viewBox="0 0 1282 2" fill="none" class="w-full">
+              <path d="M1 1H1281" stroke="#DEDEDE" stroke-linecap="round"/>
+            </svg>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- rating modal -->
+<div id="ratingModal" tabindex="-1" aria-hidden="true"
+class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative w-full max-w-2xl max-h-full">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 p-4">
+      <div class="bg-[#F4F4FF] rounded-lg">
+        <!-- Modal header -->
+        <div class="flex items-start justify-between p-4 dark:border-gray-600">
+          <h3 class="text-xl font-semibold text-color-gray font-weight-700 dark:text-white">
+            What do you think about this book?
+          </h3>
+          <button type="button"
+            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-hide="ratingModal">
+            <p class="text-[#EB5757] font-semibold hover:bg-gray-300 p-2 rounded-lg">Close</p>
+            <span class="sr-only">Close modal</span>
+          </button>
+        </div>
+        <div class="px-4 flex flex-col">
+          <p class="text-[#4F4F4F] text-[16px]">Your email address will not be published. Required fields are marked *</p>
+          <form action="" [formGroup]="detailModel.formGroupRating">
+            <div class="flex flex-wrapv py-3">
+              <p class="text-[#4F4F4F] text-[14px]">Book Rate*</p>
+              <!-- rating-star.component.html -->
+              <div class="flex items-center ps-2">
+                <span *ngFor="let star of stars" (click)="rate(star)" [class]="star <= currentRating ? 'text-yellow-300' : 'text-gray-300'">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M19.805 7.624l-5.86-.854L10.507 1.23a1.132 1.132 0 0 0-2.014 0l-3.437 5.54-5.86.854a1.132 1.132 0 0 0-.623 1.929l4.23 4.121-1 6.177a1.132 1.132 0 0 0 1.642 1.191l5.231-2.756 5.23 2.756a1.132 1.132 0 0 0 1.642-1.19l-.999-6.177 4.229-4.121a1.132 1.132 0 0 0-.622-1.929z" clip-rule="evenodd"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+            <div class="pb-3">
+              <label for="large-input" class="block mb-2 text-[14px] text-[#4F4F4F] dark:text-white font-semibold">Review*</label>
+              <input formControlName="bookReviewText" type="text" id="large-input" class="block w-full h-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-white sm:text-md dark:placeholder-gray-400">
+            </div>
+            <div class="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div class="sm:col-span-3">
+                <label for="name" class="block mb-2 text-[14px] text-[#4F4F4F] dark:text-white font-semibold">Name*</label>
+                <div class="mt-2">
+                  <input formControlName="bookReviewName" type="text" id="name" autocomplete="given-name" class="block w-full rounded-md border-0  py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div class="sm:col-span-3">
+                <label for="email" class="block mb-2 text-[14px] text-[#4F4F4F] dark:text-white font-semibold">Email*</label>
+                <div class="mt-2">
+                  <input type="email" formControlName="bookReviewEmail" id="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+            </div>
+            <div class="py-3">
+              <button (click)="submitRating()" type="submit" class="bg-gradient-to-r from-[#303096] to-[#5656C6] focus:outline-none text-white hover:bg-gradient-to-br 
+              font-medium rounded-lg text-md px-3 py-2 me-2 mb-2">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main modal -->
+<div id="default-modal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative p-4 w-full max-w-2xl max-h-full">
       <!-- Modal content -->
       <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <!-- Modal header -->
-          <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-              <h3 class="text-center text-xl text-color-gray font-weight-700 dark:text-white">
+          <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                   Preview
               </h3>
-              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
-                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal">
+                  <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                  </svg>
                   <span class="sr-only">Close modal</span>
               </button>
           </div>
           <!-- Modal body -->
-          <div id="default-carousel" class="relative pl-20 pt-10 pb-10 pr-20 space-y-4 " data-carousel="static" >
-            <div class="overflow-hidden relative rounded-lg lg:h-64 xl:h-80 2xl:h-100 preview-book" >
-                <div class="hidden" data-carousel-item *ngFor="let item of detailModel.previewsOfBook">
-                  <div class="duration-700 ease-in-out ">
-                    <div  class="preview-book">
-                        <img src="http://54.251.83.205/technobanker/backend/bookPreview/{{item.imagePreview}}" alt="Book Preview" class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <!-- Slider indicators -->
-            <div class="flex absolute rounded-lg h-8 w-44 bottom-12 items-center left-1/2 z-30 space-x-3 -translate-x-1/2">
-              <div class="position-button-preview" *ngFor="let item of detailModel.previewsOfBook">
-                <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="item"></button>
+          <div class="p-4 md:p-5 space-y-4 flex justify-center" *ngFor="let item of detailModel.previewsOfBook">
+            <img src="{{item.imagePreview}}"
+            alt="Book Preview" class="md:w-1/2 sm:w-full">
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- Modal-Preview-Image -->
+<div id="defaultModal" tabindex="-1" aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+  <div class="relative">
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <!-- Modal header -->
+      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+        <h3 class="text-center text-xl text-color-gray font-weight-700 dark:text-white">
+          Preview
+        </h3>
+        <button type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="defaultModal">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
+      </div>
+      <!-- Modal body -->
+      <div id="default-carousel" class="relative md:px-10 sm:px-0 pt-10 pb-10 space-y-4 " data-carousel="static">
+        <div class="overflow-hidden relative rounded-lg lg:h-64 xl:h-80 2xl:h-100 preview-book">
+          <div class="" data-carousel-item *ngFor="let item of detailModel.previewsOfBook">
+            <div class="duration-700 ease-in-out ">
+              <div class="">
+                <img src="{{item.imagePreview}}"
+                  alt="Book Preview" class="px-3 absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2">
               </div>
             </div>
-        </div>    
+          </div>
+        </div>
+        <!-- Slider indicators -->
+        <div class="flex absolute rounded-lg h-8 w-44 bottom-12 items-center left-1/2 z-30 space-x-3 -translate-x-1/2">
+          <div class="position-button-preview" *ngFor="let item of detailModel.previewsOfBook">
+            <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 1"
+              data-carousel-slide-to="item"></button>
+          </div>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 
 <!-- Modal-Citation -->
-<div id="citationModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="citationModal" tabindex="-1" aria-hidden="true"
+  class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
   <div class="relative w-full max-w-2xl max-h-full">
-      <!-- Modal content -->
-      <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-          <!-- Modal header -->
-          <div class="flex items-start justify-between p-4 dark:border-gray-600">
-              <h3 class="text-xl font-semibold text-color-gray font-weight-700 dark:text-white">
-                  Citation
-              </h3>
-              <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="citationModal">
-                  <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                  <span class="sr-only">Close modal</span>
-              </button>
-          </div>
-          <!-- Modal body -->
-          <div class="space-y-6 p-5">
-            <div class="rounded-lg border border-gray-300 p-5 pt-5 pl-5">
-              <textarea #inputTarget class="text-citation rounded-lg focus:border-black text-color-gray2 dark:text-gray-400" value={{book.bookCitation}}></textarea>
-            </div>
-          </div>
-          <!-- Modal footer -->
-          <div class="citation-button p-5">
-            <button [ngxClipboard]="inputTarget" type="button" class="flex rounded-lg border border-gray-700 p-5 items-center px-5 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white">
-              <svg aria-hidden="true" class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg"><path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path><path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path></svg>
-              <span class="text-sm font-medium">Copy</span>
-            </button>
-          </div>
+    <!-- Modal content -->
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <!-- Modal header -->
+      <div class="flex items-start justify-between p-4 dark:border-gray-600">
+        <h3 class="text-xl font-semibold text-color-gray font-weight-700 dark:text-white">
+          Citation
+        </h3>
+        <button type="button"
+          class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
+          data-modal-hide="citationModal">
+          <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clip-rule="evenodd"></path>
+          </svg>
+          <span class="sr-only">Close modal</span>
+        </button>
       </div>
+      <div class="p-4 flex flex-col">
+        <textarea #inputTarget class="w-100 rounded-lg focus:border-black text-color-gray2 dark:text-gray-400" value={{book.bookCitation}}></textarea>
+
+        <button [ngxClipboard]="inputTarget" type="button" class="flex justify-items-end w-fit rounded-lg border border-gray-700 mt-3 px-5 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-900 dark:hover:text-white">
+          <svg aria-hidden="true" class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 9a2 2 0 012-2h6a2 2 0 012 2v6a2 2 0 01-2 2H9a2 2 0 01-2-2V9z"></path>
+            <path d="M5 3a2 2 0 00-2 2v6a2 2 0 002 2V5h8a2 2 0 00-2-2H5z"></path>
+          </svg>
+          <span class="text-sm font-medium">Copy</span>
+        </button>
+      </div>
+    </div>
   </div>
 </div>
-
-<footer>
-  <div class="footer grid grid-cols-3">
-    <div class="col-start-1 col-end-2 ml-20 ">
-      <div>
-        <img src="../../../../assets/Footer.png">
-        <h1 class="mb-10 text-white text2-title-footer">ABOUT US</h1>
-        <p class="mt-5 text-white subtext2-footer">We focus on developing the professional careers of digital talent or employees by providing various publication materials, workshops, and training that are equipped with a practical curriculum and are supported by experienced experts and facilitators.</p>
-      </div>
-    </div>
-    <div class="position-text-footer">
-      <h1 class="text-white text-title-footer">CONTACT US</h1>
-      <p class="mt-5 text-white subtext-footer">Cervino Village Unit H Mezzanine Level, Jl. KH Abdullah Syafei No.Kav. 27, RT.3/RW.1, West Tebet, Tebet, South Jakarta City, Jakarta 12810.</p>
-      <img src="../../../../assets/phone-number.png">
-      <img src="../../../../assets/Email.png">
-      <img src="../../../../assets/date-time.png">
-    </div>
-  </div>
-  <div class="footer2 grid grid-cols-3">
-    <img class="img-footer2" src="../../../../assets/Footer2.png">
-    <h1 class="position-h1 text-white">Developed by 
-      <span class="font-weight-footer">DIGIMASTER</span>
-    </h1>
-    <h1 class="position2-h1 text-white">Copyright ©2023 Technobankers. All Rights Reserved.</h1>
-  </div>
-</footer>

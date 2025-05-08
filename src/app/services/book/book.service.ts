@@ -1,23 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { API_BASE_URL } from './../api.config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
 
+  index = 0;
+
   constructor(
     private http: HttpClient
   ) { }
 
+  public setIndex(index: number) {
+    this.index = index;
+  }
+
+  public getIndex() {
+    return this.index;
+  }
+
   public getListBook(): Observable<any> {
-    const url = 'http://54.251.83.205:9091/api/technobanker/v1/backoffice/book/get-books';
+    const url = `${API_BASE_URL}/api/technobanker/v1/backoffice/book/get-books`;
     return this.http.get(url);
   }
 
   public getListBookPartly(): Observable<any> {
-    const url = 'http://54.251.83.205:9091/api/technobanker/v1/backoffice/book/get-books-partly';
+    const url = `${API_BASE_URL}/api/technobanker/v1/backoffice/book/get-books-partly`;
     return this.http.get(url);
   }
 
@@ -28,13 +39,24 @@ export class BookService {
       .set('clientEmail', body.clientEmail)
       .set('clientNumber', body.clientNumber);
 
-    return this.http.post('http://54.251.83.205:9091/api/technobanker/v1/backoffice/book/send-email', params);
+    return this.http.post(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/send-email`, params);
+  }
+
+  public addReview(body:any): Observable<any> {
+    const params = new HttpParams()
+    .set('bookId', body.bookId)
+    .set('bookReviewName', body.bookReviewName)
+    .set('bookReviewEmail', body.bookReviewEmail)
+    .set('bookReviewRating', body.bookReviewRating)
+    .set('bookReviewText', body.bookReviewText);
+
+    return this.http.post(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/get-detailed-book/add-review`, params)
   }
   
   public getDetailBook(body: any): Observable<unknown> {
     const params = new HttpParams()
       .set('bookId', body.bookId);
-    return this.http.get('http://54.251.83.205:9091/api/technobanker/v1/backoffice/book/get-detailed-book', { params: params });
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/get-detailed-book`, { params: params });
   }
 
   saveEmailData(userData: any) {
@@ -44,7 +66,113 @@ export class BookService {
   public previewImage(body: any): Observable<unknown> {
     const params = new HttpParams()
       .set('bookId', body.bookId);
-    return this.http.get('http://54.251.83.205:9091/api/technobanker/v1/backoffice/book/get-detailed-book/book-preview', { params: params });
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/get-detailed-book/book-preview`, { params: params });
+  }
+
+  public updateViewCount(body: any): Observable<any>{
+    const formData = new FormData();
+    formData.append("bookId", body.bookId)
+    return this.http.patch(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/count-views`, formData);
+  }
+
+  public getDetailBookTransaction(bookTransactionId: number): Observable<any> {
+    const params = new HttpParams()
+    .set('bookTransactionId', bookTransactionId);
+
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/detail-book-transaction`, { params: params })
+  }
+
+  public checkOutBook(body:any): Observable<any> {
+    const params = new HttpParams()
+    .set('userId', body.userId)
+    .set('bookId', body.bookId)
+    .set('bookQuantity', body.bookQuantity);
+
+    return this.http.post(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/book-checkout`, params)
+  }
+
+  public checkOutBookShipping(bookTransactionId: any, selectedTarifJNE: any, body:any): Observable<any> {
+    const params = new HttpParams()
+    .set('bookTransactionId', bookTransactionId)
+    .set('bookReceiptName', body.bookReceiptName)
+    .set('bookReceiptPhone', body.bookReceiptPhone)
+    .set('bookReceiptEmail', body.bookReceiptEmail)
+    .set('bookShippingLabel', body.bookShippingLabel)
+    .set('bookShippingAddress', body.bookShippingAddress)
+    .set('bookShippingCountry', body.bookShippingCountry)
+    .set('bookShippingProvince', body.bookShippingProvince)
+    .set('bookShippingCity', body.bookShippingCity)
+    .set('bookShippingSubdistrict', body.bookShippingSubdistrict)
+    .set('bookShippingVillage', body.bookShippingVillagePost)
+    .set('bookShippingPostalcode', body.bookShippingPostalcode)
+    .set('bookShippingTarifCodeJNE', selectedTarifJNE);
+
+    return this.http.patch(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/book-checkout-shipping`, params)
+  }
+
+  public checkoutBookTransacion(body:any): Observable<any> {
+    return this.http.post(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/payment/cc`, body)
+  }
+
+  public checkOutBookPaymentMethod(bookTransactionId: any, bookTransactionPaymentCountry: string, body:any): Observable<any> {
+    const params = new HttpParams()
+    .set('bookTransactionId', bookTransactionId)
+    .set('bookTransactionPaymentCountry', bookTransactionPaymentCountry)
+    .set('bookTransactionPaymentMethod', body.bookTransactionPaymentMethod);
+    return this.http.patch(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/book-checkout-payment-method`, params)
+  }
+
+  public getEBook(body: any): Observable<unknown> {
+    const params = new HttpParams()
+      .set('userId', body.userId);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/book/book-user`, { params: params });
+  }
+
+  public getShippingAllCountries(): Observable<unknown> {
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/countries`);
+  }
+
+  public getShippingProvince(): Observable<unknown> {
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/local/provinces`);
+  }
+
+  public getShippingCity(provinceName: string): Observable<unknown> {
+    const params = new HttpParams()
+      .set('provinceName', provinceName);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/local/cities`, { params: params });
+  }
+
+  public getShippingDistrict(provinceName: string, cityName: string): Observable<unknown> {
+    const params = new HttpParams()
+      .set('provinceName', provinceName)
+      .set('cityName', cityName);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/local/districts`, { params: params });
+  }
+
+  public getShippingSubDistrict(provinceName: string, cityName: string, districtName: string): Observable<unknown> {
+    const params = new HttpParams()
+      .set('provinceName', provinceName)
+      .set('cityName', cityName)
+      .set('districtName', districtName);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/local/sub-districts`, { params: params });
+  }
+
+  public getShippingRateJNEInternational(transactionId: string, countryId: string, countryName: string, packageWeight: any): Observable<unknown> {
+    const params = new HttpParams()
+      .set('transactionId', transactionId)
+      .set('countryId', countryId)
+      .set('countryName', countryName)
+      .set('packageWeight', packageWeight);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/jne/rate`, { params: params });
+  }
+
+  public getShippingRateJNELocal(bookTransactionCode: string, tariffCode: any, countryName: string, packageWeight: any): Observable<unknown> {
+    const params = new HttpParams()
+      .set('bookTransactionCode', bookTransactionCode)
+      .set('tariffCode', tariffCode)
+      .set('countryName', countryName)
+      .set('packageWeight', packageWeight);
+    return this.http.get(`${API_BASE_URL}/api/technobanker/v1/backoffice/transaction/shipping/local/rates/regular`, { params: params });
   }
 
 }

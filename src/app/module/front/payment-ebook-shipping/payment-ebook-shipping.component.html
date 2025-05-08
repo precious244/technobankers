@@ -1,0 +1,239 @@
+<nav class="bg-[#1C1C28] sticky w-full z-20 top-0 start-0 border-b border-[#1C1C28] text-white">
+    <div class="flex flex-wrap items-center justify-between mx-auto px-4 pt-5 pb-4">
+        <a (click)="goBack()" class="flex items-center space-x-3 rtl:space-x-reverse md:ps-10 hover:text-yellow-300" style="cursor: pointer;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="16" viewBox="0 0 11 16" fill="none">
+                <path d="M8.4748 15.5L10.2373 13.7375L4.51231 8L10.2373 2.2625L8.4748 0.5L0.974805 8L8.4748 15.5Z" fill="white"/>
+              </svg>
+            <span class="self-center text-md font-semibold whitespace-nowrap hover:text-yellow-300">Transaction Checkout</span>
+        </a>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button data-collapse-toggle="navbar-sticky" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-sticky" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </button>
+        </div>
+        <div class="md:flex hidden w-full md:w-auto md:order-2 md:space-x-0 rtl:space-x-reverse" id="navbar-sticky">
+            <ul class="md:pe-10 flex flex-col font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-white">
+                <li *ngIf="!authService.isLogin()">
+                    <a href="/login">
+                        <button type="button" class="block py-2 px-3 btn btn-outline-light border-2 font-semibold">Login</button>
+                    </a>
+                </li>
+                <li *ngIf="authService.isLogin()">
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar1" class="flex items-center justify-between
+                     rounded hover:text-[#FFD249] md:hover:bg-transparent ps-4 md:ps-0">
+                        <span> Hi, {{ userData.userFirstName }}</span>
+                        &nbsp;
+                        <span>{{ userData.userLastName }}</span>
+                        <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                        </svg>
+                    </button>
+
+                    <div id="dropdownNavbar1" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                          <li>
+                            <a href="e-book" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">My Book</a>
+                          </li>
+                        </ul>
+                        <div class="py-1">
+                          <a href="#" (click)="logout()" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Logout</a>
+                        </div>
+                    </div>                  
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="flex flex-wrap justify-center">
+      <div class="basis-full">
+          <div class="w-full bg-white px-4 pt-5 md:p-10">
+              <div class="container px-10">
+                  <form [formGroup]="bookModel.formBookShipping" class="space-y-6 py-2">
+                        <h5 class="block mb-2 text-[20px] font-bold text-[#303096]">Recipient Info</h5>
+                        <div class="mb-3">
+                            <label for="bookReceiptName" class="block mb-2 text-[16px] font-medium text-[#000]">Full Name</label>
+                            <input formControlName="bookReceiptName" type="text" id="bookReceiptName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter recipient name" required />
+                            <div *ngIf="f['bookReceiptName'] && (f['bookReceiptName'].touched || f['bookReceiptName'].dirty) && !f['bookReceiptName'].valid">
+                                <div *ngIf="f['bookReceiptName'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookReceiptName'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookReceiptPhone" class="block mb-2 text-[16px] font-medium text-[#000]">Phone Number</label>
+                            <input formControlName="bookReceiptPhone" 
+                                   type="number" 
+                                   id="bookReceiptPhone" 
+                                   pattern="^[0-9]{8,}$"
+                                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" 
+                                   placeholder="example: 62812345678" 
+                                   required />
+                            <div *ngIf="f['bookReceiptPhone'] && (f['bookReceiptPhone'].touched || f['bookReceiptPhone'].dirty) && !f['bookReceiptPhone'].valid">
+                                <div *ngIf="f['bookReceiptPhone'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookReceiptPhone'].valid">
+                                        <span style="color: #EB5757;" *ngIf="f['bookReceiptPhone'].errors['pattern']">Invalid phone number format</span>
+                                        <span style="color: #EB5757;" *ngIf="f['bookReceiptPhone'].errors['required']">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bookReceiptEmail" class="block mb-2 text-[16px] font-medium text-[#000]">Email</label>
+                            <input *ngIf="bookModel.formBookShipping.controls['bookReceiptEmail']" formControlName="bookReceiptEmail" type="email" id="bookReceiptEmail" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your email" required />
+                            <div *ngIf="f['bookReceiptEmail'] && (f['bookReceiptEmail'].touched || f['bookReceiptEmail'].dirty) && !f['bookReceiptEmail'].valid">
+                                <div *ngIf="f['bookReceiptEmail'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookReceiptEmail'].valid">
+                                        <span style="color: #EB5757;" *ngIf="f['bookReceiptEmail'].errors['email']">Incorrect email. Please check and try again!</span>
+                                        <span style="color: #EB5757;" *ngIf="f['bookReceiptEmail'].errors['required']">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="block mb-2 text-[20px] font-bold text-[#303096] mt-6">Shipping Address</h5>
+
+                        <div class="mb-3">
+                            <label for="bookShippingLabel" class="block mb-2 text-[16px] font-medium text-[#000]">Shipping Label</label>
+                            <input formControlName="bookShippingLabel" type="text" id="bookShippingLabel" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Example : Home, Office" required />
+                            <div *ngIf="f['bookShippingLabel'] && (f['bookShippingLabel'].touched || f['bookShippingLabel'].dirty) && !f['bookShippingLabel'].valid">
+                                <div *ngIf="f['bookShippingLabel'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingLabel'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bookShippingAddress" class="block mb-2 text-[16px] font-medium text-[#000]">Street Address</label>
+                            <input formControlName="bookShippingAddress" type="text" id="bookShippingAddress" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter shipping address" required />
+                            <div *ngIf="f['bookShippingAddress'] && (f['bookShippingAddress'].touched || f['bookShippingAddress'].dirty) && !f['bookShippingAddress'].valid">
+                                <div *ngIf="f['bookShippingAddress'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingAddress'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bookShippingCountry" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select Country</label>
+                            <select [(ngModel)]="selectedCountry" (ngModelChange)="onChangeCountry($event)" formControlName="bookShippingCountry" id="bookShippingCountry" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>Choose a Country</option>
+                                <option *ngFor="let data of shippingCountry" value="{{ data.country }}">{{ data.country }}</option>
+                            </select>
+                            <div *ngIf="f['bookShippingCountry'] && (f['bookShippingCountry'].touched || f['bookShippingCountry'].dirty) && !f['bookShippingCountry'].valid">
+                                <div *ngIf="f['bookShippingCountry'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingCountry'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bookShippingProvince" class="block mb-2 text-[16px] font-medium text-[#000]">Province</label>
+                            <input *ngIf="selectedCountry != 'INDONESIA'" formControlName="bookShippingProvince" type="text" id="bookShippingProvince" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter province" required />
+                            <select *ngIf="selectedCountry == 'INDONESIA'" [(ngModel)]="selectedProvince" (ngModelChange)="onChangeProvince($event)" formControlName="bookShippingProvince" id="bookShippingProvince" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>Choose a Province</option>
+                                <option *ngFor="let data of shippingProvince" value="{{ data.provinceName }}">{{ data.provinceName }}</option>
+                            </select>
+                            <div *ngIf="f['bookShippingProvince'] && (f['bookShippingProvince'].touched || f['bookShippingProvince'].dirty) && !f['bookShippingProvince'].valid">
+                                <div *ngIf="f['bookShippingProvince'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingProvince'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bookShippingCity" class="block mb-2 text-[16px] font-medium text-[#000]">City/Regency</label>
+                            <input *ngIf="selectedCountry != 'INDONESIA'" formControlName="bookShippingCity" type="text" id="bookShippingCity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter city/regency" required />
+                            <select *ngIf="selectedCountry == 'INDONESIA'" [(ngModel)]="selectedCity" (ngModelChange)="onChangeCity($event)" formControlName="bookShippingCity" id="bookShippingCity" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected>Choose a City</option>
+                                <option *ngFor="let data of shippingCity" value="{{ data.cityName }}">{{ data.cityName }}</option>
+                            </select>
+                            <div *ngIf="f['bookShippingCity'] && (f['bookShippingCity'].touched || f['bookShippingCity'].dirty) && !f['bookShippingCity'].valid">
+                                <div *ngIf="f['bookShippingCity'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingCity'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div *ngIf="selectedCountry == 'INDONESIA'">
+                            <div class="mb-3">
+                                <label for="bookShippingSubdistrict" class="block mb-2 text-[16px] font-medium text-[#000]">Sub-district (Kecamatan)</label>
+                                <select [(ngModel)]="selectedDistrict" (ngModelChange)="onChangeDistrict($event)" formControlName="bookShippingSubdistrict" id="bookShippingSubdistrict" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected>Choose a Sub-district</option>
+                                    <option *ngFor="let data of shippingDistrict" value="{{ data.districtName }}">{{ data.districtName }}</option>
+                                </select>
+                                <div *ngIf="f['bookShippingSubdistrict'] && (f['bookShippingSubdistrict'].touched || f['bookShippingSubdistrict'].dirty) && !f['bookShippingSubdistrict'].valid">
+                                    <div *ngIf="f['bookShippingSubdistrict'].errors">
+                                        <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingSubdistrict'].valid">
+                                            <span style="color: #EB5757;">A field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="mb-3">
+                                <label for="bookShippingVillage" class="block mb-2 text-[16px] font-medium text-[#000]">Urban Village/Village (Kelurahan/Desa)</label>
+                                <select [(ngModel)]="selectedSubDistrict" (ngModelChange)="onChangeSubDistrict($event)" formControlName="bookShippingVillage" id="bookShippingVillage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                    <option selected>Choose a Village</option>
+                                    <option *ngFor="let data of shippingSubDistrict" [ngValue]="data">{{ data.subDistrictName }}</option>
+                                </select>
+                                <div *ngIf="f['bookShippingVillage'] && (f['bookShippingVillage'].touched || f['bookShippingVillage'].dirty) && !f['bookShippingVillage'].valid">
+                                    <div *ngIf="f['bookShippingVillage'].errors">
+                                        <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingVillage'].valid">
+                                            <span style="color: #EB5757;">A field is required</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="bookShippingPostalcode" class="block mb-2 text-[16px] font-medium text-[#000]">Postal Code</label>
+                            <input formControlName="bookShippingPostalcode" type="number" id="bookShippingPostalcode" [readonly]="selectedCountry == 'INDONESIA'" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter postal code" required />
+                            <div *ngIf="f['bookShippingPostalcode'] && (f['bookShippingPostalcode'].touched || f['bookShippingPostalcode'].dirty) && !f['bookShippingPostalcode'].valid">
+                                <div *ngIf="f['bookShippingPostalcode'].errors">
+                                    <div class="text-three" *ngIf="!bookModel.formBookShipping.controls['bookShippingPostalcode'].valid">
+                                        <span style="color: #EB5757;">A field is required</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        <div class="block p-6 bg-[#F4F4FF] border border-gray-200 rounded-lg w-full">
+                            <h5 class="mb-2 text-md font-bold tracking-tight text-gray-900 dark:text-white">ATTENTION:</h5>
+                            <ul class="list-disc list-inside">
+                                <li>We deliver the order no later than one working day after receiving the payment. Products will be delivered on working days if payment is received on holidays (Saturday, Sunday, and national holidays).</li>
+                                <li>For Indonesian readers, if you need faster delivery we recommend buying this book through our online store: <a class="text-[#2F80ED]" target="_blank" href="https://www.tokopedia.com/digioptimamedia">https://www.tokopedia.com/digioptimamedia</a></li>
+                            </ul>
+                        </div>
+    
+                      
+                        <button (click)="addShippingBook()" type="button" class="w-full text-white text-[18px] bg-[#5656C6] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center">
+                            Save Address
+                        </button>
+                  </form>
+              </div>
+          </div>
+    </div>
+  </div>
+</div>

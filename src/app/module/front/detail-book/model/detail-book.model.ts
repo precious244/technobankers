@@ -17,4 +17,19 @@ export class DetailBookModel {
         clientEmail: new FormControl("", [Validators.required, Validators.email]),
         clientNumber: new FormControl("")
     });
+
+    
+    formGroupRating = new FormGroup({
+        bookId: new FormControl(""),
+        bookReviewName: new FormControl(""),
+        bookReviewEmail: new FormControl(""),
+        bookReviewRating: new FormControl(0),
+        bookReviewText: new FormControl("")
+    });
+
+    formBuyBook = new FormGroup({
+        bookId: new FormControl(""),
+        userId: new FormControl(""),
+        bookQuantity: new FormControl(""),
+    });
 }
